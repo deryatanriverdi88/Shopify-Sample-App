@@ -5,23 +5,29 @@ import {
     FormLayout,
     Layout,
     Page,
+    SettingToggle,
     Stack,
-    TextField
+    TextField,
+    TextStyle
 } from '@shopify/polaris';
 
 class AnnotatedLayout extends React.Component {
     state = {
-        discount: '10%'
+        discount: '10%',
+        enabled: false
     };
 
     render() {
-        const { discount } = this.state;
+        const { discount, enabled } = this.state;
+        const contentStatus = enabled ? 'Disable' : 'Enable';
+        const textStatus = enabled ? 'enabled' : 'disabled';
+
         return (
             <Page>
                 <Layout>
                     <Layout.AnnotatedSection
-                    title="Default discount"
-                    description="Add a product to Sample App, it will automatically be discounted."
+                       title="Price updates"
+                       description="Temporarily disable all Sample App price updates"
                     >
                     <Card sectioned>
                         <Form onSubmit={this.handleSubmit}>
@@ -40,6 +46,16 @@ class AnnotatedLayout extends React.Component {
                             </FormLayout>
                         </Form>
                     </Card>
+                    <SettingToggle
+                       action={{
+                           content: contentStatus,
+                           onAction: this.handleToggle
+                       }}
+                       enabled={enabled}
+                    >
+                        This setting is {' '}
+                        <TextStyle variation="strong">{textStatus}</TextStyle>
+                    </SettingToggle>
                     </Layout.AnnotatedSection>
                 </Layout>
             </Page>
@@ -55,6 +71,12 @@ class AnnotatedLayout extends React.Component {
 
     handleChange = (field) => {
         return (value) => this.setState({[field]: value});
+    };
+
+    handleToggle = () => {
+        this.setState(({ enabled }) => {
+            return { enabled: !enabled };
+        });
     };
 };
 
