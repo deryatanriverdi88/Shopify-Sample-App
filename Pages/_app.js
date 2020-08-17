@@ -11,7 +11,9 @@ class MyApp extends App {
                     <title>Sample App</title>
                     <meta charset="utf-8" />
                 </Head>
-                <Component {...pageProps} />
+                <AppProvider>
+                    <Component {...pageProps} />
+                </AppProvider>
             </React.Fragment>
         );
     }
