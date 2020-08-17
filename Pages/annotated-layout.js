@@ -18,7 +18,10 @@ class AnnotatedLayout extends React.Component {
     };
 
     render() {
-        const { discount } = this.state;
+        const { discount, enabled } = this.state;
+        const contentStatus = enabled ? 'Disable' : 'Enable';
+        const textStatus = enabled ? 'enabled' : 'disabled';
+
         return (
             <Page>
                 <Layout>
