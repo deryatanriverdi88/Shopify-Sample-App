@@ -1,4 +1,4 @@
-import { TextStyle } from '@shopify/polaris'
+import { Page, TextStyle } from '@shopify/polaris'
 
 const Index = () => (
     <div>
