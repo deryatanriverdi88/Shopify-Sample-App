@@ -72,6 +72,12 @@ class AnnotatedLayout extends React.Component {
     handleChange = (field) => {
         return (value) => this.setState({[field]: value});
     };
+
+    handleToggle = () => {
+        this.setState(({ enabled }) => {
+            return { enabled: !enabled };
+        });
+    };
 };
 
 export default AnnotatedLayout;
