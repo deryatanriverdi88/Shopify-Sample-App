@@ -13,7 +13,7 @@ class MyApp extends App {
                     <title>Sample App</title>
                     <meta charset="utf-8" />
                 </Head>
-                <AppProvider>
+                <AppProvider i18n={ translations}>
                     <Component {...pageProps} />
                 </AppProvider>
             </React.Fragment>
