@@ -45,6 +45,17 @@ class AnnotatedLayout extends React.Component {
             </Page>
         )
     };
+
+    handleSubmit = () => {
+        this.setState({
+            discount: this.state.discount
+        });
+        console.log('submission', this.state);
+    };
+
+    handleChange = (field) => {
+        return (value) => this.setState({[field]: value});
+    };
 };
 
 export default AnnotatedLayout;
