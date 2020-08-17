@@ -26,8 +26,8 @@ class AnnotatedLayout extends React.Component {
             <Page>
                 <Layout>
                     <Layout.AnnotatedSection
-                    title="Default discount"
-                    description="Add a product to Sample App, it will automatically be discounted."
+                       title="Price updates"
+                       description="Temporarily disable all Sample App price updates"
                     >
                     <Card sectioned>
                         <Form onSubmit={this.handleSubmit}>
