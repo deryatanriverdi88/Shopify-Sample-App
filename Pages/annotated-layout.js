@@ -46,6 +46,16 @@ class AnnotatedLayout extends React.Component {
                             </FormLayout>
                         </Form>
                     </Card>
+                    <SettingToggle
+                       action={{
+                           content: contentStatus,
+                           onAction: this.handleToggle
+                       }}
+                       enabled={enabled}
+                    >
+                        This setting is {' '}
+                        <TextStyle variation="strong">{textStatus}</TextStyle>
+                    </SettingToggle>
                     </Layout.AnnotatedSection>
                 </Layout>
             </Page>
