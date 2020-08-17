@@ -1,3 +1,5 @@
+import { Card, Layout, Page } from '@shopify/polaris';
+
 class AnnotatedLayout extends React.Component {
     state = {};
 
