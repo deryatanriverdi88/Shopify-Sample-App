@@ -13,7 +13,8 @@ import {
 
 class AnnotatedLayout extends React.Component {
     state = {
-        discount: '10%'
+        discount: '10%',
+        enabled: false
     };
 
     render() {
